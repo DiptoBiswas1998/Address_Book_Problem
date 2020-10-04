@@ -6,7 +6,7 @@ namespace Address_Book_Problem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Address Book Program.");
+            Console.WriteLine("Welcome to Address Book Problem!");
             AddressBook addressBook = new AddressBook();
             Console.WriteLine("Enter first Name: ");
             String firstName = Console.ReadLine();
