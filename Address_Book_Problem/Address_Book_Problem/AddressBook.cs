@@ -33,5 +33,16 @@ namespace Address_Book_Problem
                 Console.WriteLine("Email: " + item.Value.Email);
             }
         }
+        public void EditContact(string name)
+        {
+            foreach (KeyValuePair<string, Contact> item in addressBook)
+            {
+                if(item.Key.Equals(name))
+                {
+                    TakeInfo TakingInfo = new TakeInfo();
+                    TakeInfo.TakingInfo();
+                }
+            }
+        }
     }
 }
