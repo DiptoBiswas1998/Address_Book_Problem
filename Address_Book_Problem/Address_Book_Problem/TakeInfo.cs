@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 namespace Address_Book_Problem
 {
@@ -26,12 +27,16 @@ namespace Address_Book_Problem
             String email = Console.ReadLine();
             addressBook.AddContact(firstName, lastName, address, city, state, zip, phNo, email);
             addressBook.ViewContact();
-            Console.WriteLine("Press 1 to Edit\nAny other digit to abort");
+            Console.WriteLine("Press 1 to Edit\nPress 2 to Delete\nAny other digit to abort");
             int option = Convert.ToInt32(Console.ReadLine());
             if(option == 1)
             {
                 addressBook.EditContact(firstName);
                 addressBook.ViewContact();
+            }
+            else if(option == 2)
+            {
+                addressBook.DeleteContact(firstName);
             }
         }
     }

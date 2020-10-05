@@ -44,5 +44,13 @@ namespace Address_Book_Problem
                 }
             }
         }
+        public void DeleteContact(string name)
+        {
+            if (addressBook.ContainsKey(name))
+            {
+                addressBook.Remove(name);
+                Console.WriteLine("Contact successfully deleted!");
+            }
+        }
     }
 }
