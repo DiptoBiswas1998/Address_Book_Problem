@@ -123,6 +123,15 @@ namespace Address_Book_Problem
             }
             return book;
         }
+        public List<Contact> GetListOfDictctionaryKeys2(Dictionary<string, Contact> d)
+        {
+            List<Contact> book = new List<Contact>();
+            foreach (var value in d.Values)
+            {
+                book.Add(value);
+            }
+            return book;
+        }
         public bool CheckDuplicateEntry(Contact c, string bookName)
         {
             List<Contact> book = GetListOfDictctionaryKeys(bookName);
@@ -132,6 +141,28 @@ namespace Address_Book_Problem
                 return true;
             }
             return false;
+        }
+        public void SearchPersonByCity(string city)
+        {
+            foreach (AddressBook addressbookobj in addressBookDictionary.Values)
+            {
+                List<Contact> contactList = GetListOfDictctionaryKeys2(addressbookobj.addressBook);
+                foreach (Contact contact in contactList.FindAll(c => c.City.Equals(city)).ToList())
+                {
+                    Console.WriteLine(contact.ToString());
+                }
+            }
+        }
+        public void SearchPersonByState(string state)
+        {
+            foreach (AddressBook addressbookobj in addressBookDictionary.Values)
+            {
+                List<Contact> contactList = GetListOfDictctionaryKeys2(addressbookobj.addressBook);
+                foreach (Contact contact in contactList.FindAll(c => c.State.Equals(state)).ToList())
+                {
+                    Console.WriteLine(contact.ToString());
+                }
+            }
         }
     }
 }
